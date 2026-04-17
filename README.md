@@ -77,7 +77,8 @@ LLM powered tool to help improve resumes based on job description
    Success metrics
 
      1. Resume accuracy > 95%
-     2. ATS match greater than 90% for 95%+ resumes
+     2. Less edit rate post resume generation
+     3. % JD coverage by keywords
 
    Counter metrics
 

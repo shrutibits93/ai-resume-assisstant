@@ -8,7 +8,8 @@ LLM powered tool to help improve resumes based on job description
   Well you are not doing anything wrong, low keyword match creates a low ATS ranking and this is where you are losing out. 
   The resume assistant helps you bridge this gap and make your resume have an ATS match of 90%+, thus helping to elevate your resume.
 
-1. **Problem:** When applying for new jobs, candidates are not sure what keywords to use to get an ATS match of 90%+
+1. **Problem:** When applying for new jobs, candidates are not sure what keywords to use to get an ATS match of 90%+ and hence do not clearly articulate their experience to match the job. 
+                Resume tailoring is a real problem!
 
 2. **Solution**
 

@@ -38,8 +38,10 @@ LLM powered tool to help improve resumes based on job description
 
     Every input and output combination will be stored and logged (I have not captured this in code as I dont have a big data base, but thats the idea). This helps monitor usage and helps 
     in future iterations.
+
+    I have also chosen streamlit to run the app as its only a few lines of code for MVP and need to quickly run the app with less complexity.
       
-4. **Architecture**
+5. **Architecture**
 
     User Input -> Prompt Engine -> LLM -> Output formatter -> UI
 
@@ -47,8 +49,8 @@ LLM powered tool to help improve resumes based on job description
     app.py - runs the UI and takes user input and internally calls ResumeJD_Compare.py
     ResumeJD_Comapre - runs the prompts that actually compare the resume and JD to output the final result
    
-5. **Prompt Design**
-6. **Evaluation**
-7. Example Output
-8. Challenges
-9. Future Work
+6. **Prompt Design**
+7. **Evaluation**
+8. Example Output
+9. Challenges
+10. Future Work

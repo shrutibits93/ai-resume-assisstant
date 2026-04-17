@@ -90,13 +90,25 @@ LLM powered tool to help improve resumes based on job description
      1. Dislikes by user exceeding 15%
   
 9. **Example Output**
-10. **Challenges**
+
+    Model Running
+    
+   <img width="1219" height="541" alt="Screenshot 2026-04-17 at 11 24 50 AM" src="https://github.com/user-attachments/assets/e71cd365-7a1c-4e9f-bc26-5cf8dbb652a9" />
+
+    Output
+
+    <img width="785" height="725" alt="Screenshot 2026-04-17 at 11 27 47 AM" src="https://github.com/user-attachments/assets/d6bdbbcb-725e-4f12-b983-5ddec30415b1" />
+
+    <img width="798" height="857" alt="Screenshot 2026-04-17 at 11 28 11 AM" src="https://github.com/user-attachments/assets/13241ff7-0abc-43f5-a825-5b260efcdba5" />
+
+    
+11. **Challenges**
 
     AI specific risks to consider:
      1. Bias - model may decide to use certain keywords based on job role/user 
      2. Hallucinations - model may create its own facts for a job role and try to reach ATS 90%
      
-11. **Future Work**
+12. **Future Work**
 
     V1: Improvements based on user input and feedback - more dynamic feedback loop
     V2: Downloadable pdf version of resume based on template selection by user

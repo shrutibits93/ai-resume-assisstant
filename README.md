@@ -14,13 +14,14 @@ LLM powered tool to help improve resumes based on job description
 2. **Solution**
 
     The problem is that users want to know what keywords should be included and where in the resume. They are not always aware what helps increase the ATS match. 
-    AI can help bridge the gap by providing candidates with the right keywords based on the job description for which they are applying. Based on these keywords, AI can rewrite a polished 
-    resume for users in the exact same format which users can directly use for the relevant job.
+    AI can help bridge the gap by providing candidates with the right keywords based on the job description for which they are applying. It will help increase keyword coverage for each 
+    resume and provide a more tailored, aligned resume per job and word the the skills towards the job without assuming data and solely relying on data provided by user. The original
+    format of users resume will also be maintained.
 
     For MVP, I have decided to just provide a basic output in the same format of the resume the user provides. User can like or dislike the resume which will help decide if it is serving 
     user's purpose or not. Eventually the idea is to get more user inputs to enhance model, but thats for future iterations.
     
-    MVP:
+    MVP: Improved Keyword coverage and match to the job for users
     1. User will provide resume and description in UI
     2. LLM will output a polished resume containing all ATS relevant keywords in all the right places.
     3. LLM will also list keywords that it included and why

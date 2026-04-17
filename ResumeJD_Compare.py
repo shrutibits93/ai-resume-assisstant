@@ -2,7 +2,7 @@ import os
 import openai
 from pathlib import Path
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "Your Secret"
 
 def enhance_text(resume_txt, job_description):
     client = openai.OpenAI()

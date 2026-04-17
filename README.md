@@ -50,9 +50,52 @@ LLM powered tool to help improve resumes based on job description
     Code structure
     app.py - runs the UI and takes user input and internally calls ResumeJD_Compare.py
     ResumeJD_Comapre - runs the prompts that actually compare the resume and JD to output the final result
+
+    UI flow
+    1. User enters data and submits which triggers the model
+    2. Prompts and LLM process the input and based on the job tailore the resume
+    3. User provided with where the resume was weak and what keywords need to be included for better alignement and also provided with a final tailored resume
+    4. User can react by liking or unliking the output. 
+    5. Use can choose to re-input the aligned version and LLM can further improve this.
+
+    The UI ensures that users have control on what resume they like and want to use and how much they want to rely on AI. The AI only provide suggestions.
    
 6. **Prompt Design**
+
+    The prompt structure for MVP is-
+    system - to define the initial instructions/foundation rules for the LLM. Controls are put in place to prevent data leakage, maintain tone and format.
+    user - to provide the user entered job description and resume and query for what generically a user may want, which is ATS match of 90%+
+
+    For future iterations, assistant can be put in place when context needs to be preserved and LLM is also considering continuous user feedback and using that to improve a resume further.
+    
 7. **Evaluation**
-8. Example Output
-9. Challenges
-10. Future Work
+
+   North-star metric
+
+      Number of users happy with the ATS matched resume provided by the app
+   
+   Success metrics
+
+     1. Resume accuracy > 95%
+     2. ATS match greater than 90% for 95%+ resumes
+
+   Counter metrics
+
+     1. Hallucinations < 5%
+     2. Dislikes by user < 10%
+
+   Kill criteria
+
+     1. Dislikes by user exceeding 15%
+  
+9. **Example Output**
+10. **Challenges**
+
+    AI specific risks to consider:
+     1. Bias - model may decide to use certain keywords based on job role/user 
+     2. Hallucinations - model may create its own facts for a job role and try to reach ATS 90%
+     
+11. **Future Work**
+
+    V1: Improvements based on user input and feedback - more dynamic feedback loop
+    V2: Downloadable pdf version of resume based on template selection by user

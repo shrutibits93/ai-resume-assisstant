@@ -24,7 +24,7 @@ LLM powered tool to help improve resumes based on job description
     MVP: Improved Keyword coverage and match to the job for users
     1. User will provide resume and description in UI
     2. LLM will output a polished resume containing all ATS relevant keywords in all the right places.
-    3. LLM will also list keywords that it included and why
+    3. LLM will also list keywords that it included and to which section to get the best match without keyword stuffing
     4. User can like or dislike the solution
 
 3. **Approach**

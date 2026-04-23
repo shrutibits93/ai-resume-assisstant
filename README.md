@@ -27,16 +27,16 @@ LLM powered tool to help improve resumes based on job description
     2. LLM will provide match percentage of job and resume and key gaps
     3. User can decide to proceed by clicking yes or no
     4. When user clicks yes, then LLM will list key areas where resume needs changes and furnish a rewritten resume.
+    5. User can click "Use for job" or "Rewrite to get a better output"
 
 4. **Approach**
 
     Based on the solution, the model I decided to use initially was a pre-trained model with prompting. I did not go with RAG or fine-tuning for MVP as the model has to only consider the
     data shared by the user and rewrite it. The context is also small and there are no history to be considered for MVP.
     Cost and Latency considerations: 
-    Between RAG and LLM prompting, LLM prompting would have a lower cost. To consider user adoption, I have decided to take lower cost for MVP, based on user reations, the model can be 
-    built with more sofistication. Prompt LLMs will be faster as well
+    Between RAG and LLM prompting, LLM prompting would have a lower cost in this case. To consider user adoption, I have decided to take lower cost for MVP, based on user reations, the        model can be built with more sofistication. Prompt LLMs will be faster as well.
     
-    Since the model should rewrite based on facts only and show too much creativity, I have kept the temperature on the lower end. This will also help reduce hallucinations and be more
+    Since the model should rewrite based on facts only and not show too much creativity, I have kept the temperature on the lower end. This will also help reduce hallucinations and be more
     deterministic. 
 
     Every input and output combination will be stored and logged (I have not captured this in code as I dont have a big data base, but thats the idea). This helps monitor usage and helps 
@@ -57,7 +57,7 @@ LLM powered tool to help improve resumes based on job description
     2. Prompts and LLM process the input and based on the job tailore the resume
     3. User provided with where the resume was weak and what keywords need to be included for better alignement and also provided with a final tailored resume
     4. User can react by liking or unliking the output. 
-    5. Use can choose to re-input the aligned version and LLM can further improve this.
+    5. User can choose to re-input the aligned version and LLM can further improve this.
 
     The UI ensures that users have control on what resume they like and want to use and how much they want to rely on AI. The AI only provide suggestions.
    
@@ -73,22 +73,25 @@ LLM powered tool to help improve resumes based on job description
 
    North-star metric
 
-      Number of users happy with the ATS matched resume provided by the app
+      1. Number of resumes requested by user for rewrite - this captures engagement and usage
+      2. Number of resumes used for job application
    
    Success metrics
 
-     1. Resume accuracy > 95%
-     2. Less edit rate post resume generation
-     3. % JD coverage by keywords
+     1. Number of rewrites requested (this should be low)
+     2. % JD coverage by keywords
 
    Counter metrics
 
-     1. Hallucinations < 5%
-     2. Dislikes by user < 10%
+     1. % Incorrect matches shown
+     2. Resume accuracy and tone
+     3. Keyword stuffing %
+     4. Model should not overcompensate for gaps in resume
 
    Kill criteria
 
-     1. Dislikes by user exceeding 15%
+     1. If a user clicks on rewrite more than 5 times then there is less value for them
+     2. Overall rewrites % exceeds 20% then kill
   
 9. **Example Output**
 

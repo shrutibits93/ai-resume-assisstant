@@ -5,18 +5,19 @@ LLM powered tool to help improve resumes based on job description
 
   Do you ever go through multiple jobs reading through the job description and feel like, I am a viable candidate. You update your resume to show relevant experience, expecting to atleast
   hear back from the hiring team but instead you get a rejection!
-  Well you are not doing anything wrong, low keyword match creates a low ATS ranking and this is where you are losing out. 
+  This happens due to low keyword match which creates a low ATS ranking and not having a resume aligned to the right job. 
   
 
-1. **Problem:** When applying for new jobs, candidates are not sure if they are a fit for the job and if yes what are the right keywords and how to better align their resume to the job they are aligning. 
+1. **Problem:** Job seekers struggle to understand whether they are a strong fit for a role and how to tailor their resume for Applicant Tracking Systems (ATS). As a result, qualified candidates are often filtered out due to poor keyword alignment.
 
 2. **Solution**
 
     The problem is that users want to know what keywords should be included and where in the resume. They are not always aware what helps increase the ATS match.
-    The resume assistant helps you decide whether this job is a right fit for you by showing job to resume match. It provides the following
-      1. Job match
-      2. Keyword gap that may increase your chances (not falsifying data rather using the right keywords)
-      3. Rewrite resume if you wish to proceed with applying
+    The resume assistant helps makes applying for jobs easier by providing the following features
+       Job Match Score – Estimates alignment between resume and job description
+       Keyword Gap Analysis – Identifies missing or weak signals
+       Resume Rewrite – Generates a tailored version while preserving factual accuracy
+       User Feedback Loop – Like/dislike signals to guide future improvements
     The reason we use AI here is because there is no single template that fits every job and every candidate is different. AI can help here by using semantic similarities to understand        differences between a resume and job description and bridge that gap. The right prompts can also help monitor the tone and format. AI also has the ability to personalise overtime as       it understands the users preferences.
 
     For MVP, I have decided to just provide a basic output in the same format of the resume the user provides. User can like or dislike the resume which will help decide if it is serving 
@@ -32,9 +33,7 @@ LLM powered tool to help improve resumes based on job description
 4. **Approach**
 
     Based on the solution, the model I decided to use initially was a pre-trained model with prompting. I did not go with RAG or fine-tuning for MVP as the model has to only consider the
-    data shared by the user and rewrite it. The context is also small and there are no history to be considered for MVP.
-    Cost and Latency considerations: 
-    Between RAG and LLM prompting, LLM prompting would have a lower cost in this case. To consider user adoption, I have decided to take lower cost for MVP, based on user reations, the        model can be built with more sofistication. Prompt LLMs will be faster as well.
+    data shared by the user and rewrite it. The context is also small and there are no history to be considered for MVP. Prompting provides quick results as well.
     
     Since the model should rewrite based on facts only and not show too much creativity, I have kept the temperature on the lower end. This will also help reduce hallucinations and be more
     deterministic. 

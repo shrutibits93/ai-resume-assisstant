@@ -6,28 +6,29 @@ LLM powered tool to help improve resumes based on job description
   Do you ever go through multiple jobs reading through the job description and feel like, I am a viable candidate. You update your resume to show relevant experience, expecting to atleast
   hear back from the hiring team but instead you get a rejection!
   Well you are not doing anything wrong, low keyword match creates a low ATS ranking and this is where you are losing out. 
-  The resume assistant helps you bridge this gap and make your resume have an ATS match of 90%+, thus helping to elevate your resume.
+  
 
-1. **Problem:** When applying for new jobs, candidates are not sure what keywords to use to get an ATS match of 90%+ and hence do not clearly articulate their experience to match the job. 
-                Resume tailoring is a real problem!
+1. **Problem:** When applying for new jobs, candidates are not sure if they are a fit for the job and if yes what are the right keywords and how to better align their resume to the job they are aligning. 
 
 2. **Solution**
 
-    The problem is that users want to know what keywords should be included and where in the resume. They are not always aware what helps increase the ATS match. 
-    AI can help bridge the gap by providing candidates with the right keywords based on the job description for which they are applying. It will help increase keyword coverage for each 
-    resume and provide a more tailored, aligned resume per job and word the the skills towards the job without assuming data and solely relying on data provided by user. The original
-    format of users resume will also be maintained.
+    The problem is that users want to know what keywords should be included and where in the resume. They are not always aware what helps increase the ATS match.
+    The resume assistant helps you decide whether this job is a right fit for you by showing job to resume match. It provides the following
+      1. Job match
+      2. Keyword gap that may increase your chances (not falsifying data rather using the right keywords)
+      3. Rewrite resume if you wish to proceed with applying
+    The reason we use AI here is because there is no single template that fits every job and every candidate is different. AI can help here by using semantic similarities to understand        differences between a resume and job description and bridge that gap. The right prompts can also help monitor the tone and format. AI also has the ability to personalise overtime as       it understands the users preferences.
 
     For MVP, I have decided to just provide a basic output in the same format of the resume the user provides. User can like or dislike the resume which will help decide if it is serving 
-    user's purpose or not. Eventually the idea is to get more user inputs to enhance model, but thats for future iterations.
+    user's purpose or not. Eventually the idea is to get more user inputs and feedback to enhance the output dynamically, but thats for future iterations.
     
-    MVP: Improved Keyword coverage and match to the job for users
+    MVP: Assist user to apply for jobs where they have highest match and where applicable improved Keyword coverage and align resume to the job 
     1. User will provide resume and description in UI
-    2. LLM will output a polished resume containing all ATS relevant keywords in all the right places.
-    3. LLM will also list keywords that it included and to which section to get the best match without keyword stuffing
-    4. User can like or dislike the solution
+    2. LLM will provide match percentage of job and resume and key gaps
+    3. User can decide to proceed by clicking yes or no
+    4. When user clicks yes, then LLM will list key areas where resume needs changes and furnish a rewritten resume.
 
-3. **Approach**
+4. **Approach**
 
     Based on the solution, the model I decided to use initially was a pre-trained model with prompting. I did not go with RAG or fine-tuning for MVP as the model has to only consider the
     data shared by the user and rewrite it. The context is also small and there are no history to be considered for MVP.

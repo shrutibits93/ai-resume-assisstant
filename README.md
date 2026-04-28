@@ -53,22 +53,24 @@ LLM powered tool to help improve resumes based on job description
 
     UI flow
     1. User enters data and submits which triggers the model
-    2. Prompts and LLM process the input and based on the job tailore the resume
-    3. User provided with where the resume was weak and what keywords need to be included for better alignement and also provided with a final tailored resume
-    4. User can react by liking or unliking the output. 
-    5. User can choose to re-input the aligned version and LLM can further improve this.
+    2. Prompts and LLM process the input and provide a detailed analysis to user to decide whether they want to proceed.
+    3. As part of the analysis, user is provided with where the resume was weak and what keywords need to be included for better alignement
+    4. Based on user decision, resume is rewritten by model (no analysis is provided second time, only an updated resume)
+    5. User can react by using the resume by downloading or rewrite the resume.
 
-    The UI ensures that users have control on what resume they like and want to use and how much they want to rely on AI. The AI only provide suggestions.
+    The UI ensures that users have control on what resume they like and want to use and how much they want to rely on AI. The AI only provides suggestions.
    
 6. **Prompt Design**
 
     The prompt structure for MVP is-
     system - to define the initial instructions/foundation rules for the LLM. Controls are put in place to prevent data leakage, maintain tone and format.
-    user - to provide the user entered job description and resume and query for what generically a user may want, which is ATS match of 90%+
+
+    There are 2 prompts used, one to analyse and one to provide the updated resume. 
+    The prompts are written in such a way so as to ensure there is no data leak between them. The second prompt does not do another analysis
 
     For future iterations, assistant can be put in place when context needs to be preserved and LLM is also considering continuous user feedback and using that to improve a resume further.
     
-7. **Evaluation**
+8. **Evaluation**
 
    North-star metric
 
@@ -94,15 +96,22 @@ LLM powered tool to help improve resumes based on job description
   
 9. **Example Output**
 
-    Model Running
+    User can input Job Description and Resume
+
+    <img width="2018" height="1056" alt="image" src="https://github.com/user-attachments/assets/f8ceb718-bfd4-4dff-bd73-4dd39c3ae03f" />
+
+
+    User can tailor resume or choose to skip this job if match is too low
     
-   <img width="1219" height="541" alt="Screenshot 2026-04-17 at 11 24 50 AM" src="https://github.com/user-attachments/assets/e71cd365-7a1c-4e9f-bc26-5cf8dbb652a9" />
+    <img width="1776" height="1668" alt="image" src="https://github.com/user-attachments/assets/e3eed3ee-2477-4816-9451-9535ddf57812" />
 
-    Output
 
-    <img width="785" height="725" alt="Screenshot 2026-04-17 at 11 27 47 AM" src="https://github.com/user-attachments/assets/d6bdbbcb-725e-4f12-b983-5ddec30415b1" />
+    Final resume can be tailored or rewritten if user clicks on Proceed with Tailoring
 
-    <img width="798" height="857" alt="Screenshot 2026-04-17 at 11 28 11 AM" src="https://github.com/user-attachments/assets/13241ff7-0abc-43f5-a825-5b260efcdba5" />
+    <img width="1990" height="1656" alt="image" src="https://github.com/user-attachments/assets/ae0b1129-9af0-4d33-840c-4f5fcf6a1900" />
+
+
+    
 
     
 11. **Challenges**
